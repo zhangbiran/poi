@@ -17,6 +17,7 @@
 
 package org.apache.poi.hssf.model;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -145,6 +146,8 @@ final class TestLinkTable {
 
         assertThrows(IllegalStateException.class,
                 () -> lt.getExternalBookAndSheetName(0));
+
+        assertDoesNotThrow(() -> lt.removeSheet(0));
     }
 
     @Test

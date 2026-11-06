@@ -506,7 +506,9 @@ final class LinkTable {
     }
 
     public void removeSheet(int sheetIdx) {
-        _externSheetRecord.removeSheet(sheetIdx);
+        if (_externSheetRecord != null) {
+            _externSheetRecord.removeSheet(sheetIdx);
+        }
     }
 
     public int checkExternSheet(int sheetIndex) {
